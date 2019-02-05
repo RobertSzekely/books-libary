@@ -1,18 +1,19 @@
-package com.example.booklibrary
+package com.example.booklibrary.feature
 
 import android.os.Bundle
 import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity;
 import android.view.Menu
 import android.view.MenuItem
+import com.example.booklibrary.R
 
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_book_library.*
 
-class MainActivity : AppCompatActivity() {
+class BookLibraryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_book_library)
         setSupportActionBar(toolbar)
 
         fab.setOnClickListener { view ->
