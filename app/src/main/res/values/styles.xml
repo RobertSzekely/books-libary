@@ -6,12 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="toolbarStyle">@style/Toolbar</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
         <item name="android:textColorSecondary">@color/white</item>
-    </style>
-
-    <style name="Toolbar" parent="Base.V7.Widget.AppCompat.Toolbar">
-        <item name="android:titleTextColor">@color/white</item>
     </style>
 
     <style name="TextBold">
