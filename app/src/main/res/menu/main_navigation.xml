@@ -2,13 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/home"
+        android:icon="@drawable/ic_home"
         android:title="@string/main_navigation_home" />
 
     <item
         android:id="@+id/favorites"
+        android:icon="@drawable/ic_favorite_border"
         android:title="@string/main_navigation_favorites" />
 
     <item
         android:id="@+id/wishlist"
+        android:icon="@drawable/ic_wishlist"
         android:title="@string/main_navigation_wishlist" />
 </menu>
