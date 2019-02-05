@@ -1,8 +1,9 @@
 <resources>
-    <string name="app_name">BookLibrary</string>
+    <string name="app_name">Library</string>
 
     <!--Main navigation-->
     <string name="main_navigation_home">Home</string>
     <string name="main_navigation_favorites">Favorites</string>
     <string name="main_navigation_wishlist">Wishlist</string>
+
 </resources>
