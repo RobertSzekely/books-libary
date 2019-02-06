@@ -38,7 +38,14 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
 
     // Koin for Android
-    implementation 'org.koin:koin-android:1.0.2'
+    def koinVersion = '1.0.2'
+    implementation "org.koin:koin-android:$koinVersion"
+    implementation "org.koin:koin-androidx-scope:$koinVersion"
+    implementation "org.koin:koin-androidx-viewmodel:$koinVersion"
+
+    //Glide
+    def glide_version = "4.8.0"
+    implementation "com.github.bumptech.glide:glide:$glide_version"
 
     // Material
     implementation 'com.google.android.material:material:1.0.0'

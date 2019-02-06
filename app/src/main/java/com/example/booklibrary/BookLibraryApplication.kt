@@ -8,6 +8,6 @@ class BookLibraryApplication: Application() {
 
     override fun onCreate() {
         super.onCreate()
-        startKoin(this, listOf(networkingModule))
+        startKoin(this, listOf(networkingModule, repositoryModule, viewModelsModule))
     }
 }
