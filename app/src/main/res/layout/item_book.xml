@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="book"
+            type="com.example.booklibrary.data.models.Book" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
+        android:onClick="@{clickListener}"
+        android:padding="16dp">
+
+        <!--         app:imageUrl="@{application.icon}"-->
+        <ImageView
+            android:id="@+id/book_cover_image"
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:src="@drawable/no_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/book_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="@{book.title}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/book_author"
+            app:layout_constraintStart_toEndOf="@id/book_cover_image"
+            app:layout_constraintTop_toTopOf="@id/book_cover_image"
+            tools:text="Harry Potter" />
+
+        <TextView
+            android:id="@+id/book_author"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{book.author}"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/book_title"
+            app:layout_constraintTop_toBottomOf="@id/book_title"
+            app:layout_constraintVertical_chainStyle="spread_inside"
+            tools:text="@tools:sample/full_names" />
+
+        <ImageButton
+            android:id="@+id/favorite_button"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_favorite_border"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ContentDescription"
+            tools:src="@drawable/ic_favorite_border" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
