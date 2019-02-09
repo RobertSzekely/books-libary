@@ -5,22 +5,21 @@
 
     <data>
 
-        <variable
-                name="book"
-                type="com.example.booklibrary.data.models.Book"/>
+        <variable name="book" type="com.example.booklibrary.data.models.Book"/>
+
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="16dp">
+            android:padding="@dimen/padding_normal">
 
         <!--app:imageUrl="@{book.cover}"-->
         <ImageView
                 android:id="@+id/book_cover_image"
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="@dimen/cover_size"
+                android:layout_height="@dimen/cover_size"
                 android:src="@drawable/no_photo"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -34,7 +33,7 @@
                 android:layout_marginStart="16dp"
                 android:text="@{book.title}"
                 android:textColor="@color/black"
-                android:textSize="16sp"
+                android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toTopOf="@id/book_author"
                 app:layout_constraintStart_toEndOf="@id/book_cover_image"
@@ -47,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:text="@{book.author}"
                 android:textColor="@color/grey"
-                android:textSize="14sp"
+                android:textSize="@dimen/text_medium_small"
                 app:layout_constraintStart_toStartOf="@id/book_title"
                 app:layout_constraintTop_toBottomOf="@id/book_title"
                 app:layout_constraintVertical_chainStyle="spread_inside"
