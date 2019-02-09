@@ -8,6 +8,6 @@
     <dimen name="text_medium">16sp</dimen>
 
     <!--Book feed-->
-    <dimen name="cover_size">56dp</dimen>
+    <dimen name="cover_width">96dp</dimen>
 
 </resources>

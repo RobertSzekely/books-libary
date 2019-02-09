@@ -15,26 +15,30 @@
             android:background="?android:attr/selectableItemBackground"
             android:padding="@dimen/padding_normal">
 
-        <!--app:imageUrl="@{book.cover}"-->
         <ImageView
                 android:id="@+id/book_cover_image"
-                android:layout_width="@dimen/cover_size"
-                android:layout_height="@dimen/cover_size"
+                android:layout_width="@dimen/cover_width"
+                android:layout_height="0dp"
+                app:layout_constraintDimensionRatio="H, 3:4"
+                android:scaleType="centerInside"
                 android:src="@drawable/no_photo"
+                app:imageUrl="@{book.cover}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:ignore="ContentDescription"/>
+                tools:ignore="ContentDescription"
+                tools:src="@drawable/no_photo"/>
 
         <TextView
                 android:id="@+id/book_title"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:text="@{book.title}"
                 android:textColor="@color/black"
                 android:textSize="@dimen/text_medium"
                 android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toTopOf="@id/book_author"
                 app:layout_constraintStart_toEndOf="@id/book_cover_image"
                 app:layout_constraintTop_toTopOf="@id/book_cover_image"
