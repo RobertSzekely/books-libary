@@ -2,7 +2,9 @@ package com.example.booklibrary.feature.feed
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
+import com.example.booklibrary.R
 import com.example.booklibrary.data.models.Book
 import com.example.booklibrary.databinding.ItemBookBinding
 import com.example.booklibrary.feature.common.BaseListAdapter
@@ -10,7 +12,7 @@ import com.example.booklibrary.feature.common.BaseListAdapter
 class BookAdapter : BaseListAdapter<Book, ItemBookBinding>(BOOK_DIFF_UTIL) {
 
     override fun createBinding(parent: ViewGroup): ItemBookBinding {
-        return ItemBookBinding.inflate(LayoutInflater.from(parent.context))
+        return DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_book, parent, false)
     }
 
     override fun bind(binding: ItemBookBinding, item: Book) {
