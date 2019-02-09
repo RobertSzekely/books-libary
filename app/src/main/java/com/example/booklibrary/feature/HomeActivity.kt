@@ -20,14 +20,17 @@ class HomeActivity : AppCompatActivity() {
             bottomNavigation.setOnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.home -> {
+                        fab.show()
                         navigateToFragment(BookFeedFragment.newInstance())
                         return@setOnNavigationItemSelectedListener true
                     }
                     R.id.favorites -> {
+                        fab.hide()
                         navigateToFragment(FavoritesFragment.newInstance())
                         return@setOnNavigationItemSelectedListener true
                     }
                     R.id.wishlist -> {
+                        fab.hide()
                         navigateToFragment(WishlistFragment.newInstance())
                         return@setOnNavigationItemSelectedListener true
                     }
