@@ -9,7 +9,7 @@ import com.example.booklibrary.data.models.Book
 import com.example.booklibrary.databinding.ItemBookBinding
 import com.example.booklibrary.feature.common.BaseListAdapter
 
-class BookAdapter : BaseListAdapter<Book, ItemBookBinding>(BOOK_DIFF_UTIL) {
+class BookAdapter : BaseListAdapter<Book, ItemBookBinding>(BookDiff) {
 
     override fun createBinding(parent: ViewGroup): ItemBookBinding {
         return DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_book, parent, false)
@@ -18,17 +18,15 @@ class BookAdapter : BaseListAdapter<Book, ItemBookBinding>(BOOK_DIFF_UTIL) {
     override fun bind(binding: ItemBookBinding, item: Book) {
         binding.book = item
     }
+}
 
-    companion object {
-        val BOOK_DIFF_UTIL = object : DiffUtil.ItemCallback<Book>() {
+object BookDiff : DiffUtil.ItemCallback<Book>() {
 
-            override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
-                return oldItem.id == newItem.id
-            }
+    override fun areItemsTheSame(oldItem: Book, newItem: Book): Boolean {
+        return oldItem.id == newItem.id
+    }
 
-            override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
-                return oldItem == newItem
-            }
-        }
+    override fun areContentsTheSame(oldItem: Book, newItem: Book): Boolean {
+        return oldItem == newItem
     }
 }
