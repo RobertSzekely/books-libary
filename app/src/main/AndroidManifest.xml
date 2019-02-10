@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.booklibrary">
+    package="com.robertszekely.booklibrary">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".BookLibraryApplication"
+        android:name="com.robertszekely.booklibrary.BookLibraryApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,9 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".feature.feed.addbook.AddBookActivity"/>
+        <activity android:name="com.robertszekely.booklibrary.feature.feed.addbook.AddBookActivity"/>
         <activity
-            android:name=".feature.home.HomeActivity"
+            android:name="com.robertszekely.booklibrary.feature.home.HomeActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
             <intent-filter>

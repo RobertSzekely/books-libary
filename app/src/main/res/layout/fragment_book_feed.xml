@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="com.example.booklibrary.feature.feed.BookFeedViewModel" />
+            type="com.robertszekely.booklibrary.feature.feed.BookFeedViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

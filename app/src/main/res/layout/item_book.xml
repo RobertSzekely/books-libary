@@ -5,7 +5,7 @@
 
     <data>
 
-        <variable name="book" type="com.example.booklibrary.data.models.Book"/>
+        <variable name="book" type="com.robertszekely.booklibrary.data.models.Book"/>
 
     </data>
 
