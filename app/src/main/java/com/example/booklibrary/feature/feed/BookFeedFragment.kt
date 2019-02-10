@@ -18,7 +18,7 @@ class BookFeedFragment : Fragment() {
     private lateinit var binding: BookFeedFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.book_feed_fragment, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_book_feed, container, false)
         return binding.root
     }
 

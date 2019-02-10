@@ -19,7 +19,7 @@ class WishlistFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.wishlist_fragment, container, false)
+        return inflater.inflate(R.layout.fragment_wishlist, container, false)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
