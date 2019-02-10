@@ -6,4 +6,11 @@
     <string name="main_navigation_favorites">Favorites</string>
     <string name="main_navigation_wishlist">Wishlist</string>
 
+    <!--Add book-->
+    <string name="add_book_toolbar_title">Add a new book</string>
+    <string name="add_book_title_hint">Title</string>
+    <string name="add_book_title_helper">Title of the book</string>
+    <string name="add_book_author_hint">Author</string>
+    <string name="add_book_author_helper">Author of the book</string>
+
 </resources>
