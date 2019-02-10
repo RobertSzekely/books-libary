@@ -12,6 +12,8 @@
     <string name="add_book_title_helper">Title of the book</string>
     <string name="add_book_author_hint">Author</string>
     <string name="add_book_author_helper">Author of the book</string>
-    <string name="add_book_save_button">Done</string>
+    <string name="add_book_cover_hint">Cover link</string>
+    <string name="add_book_cover_helper">Link to the cover of the book</string>
+    <string name="add_book_save_button">Save</string>
 
 </resources>

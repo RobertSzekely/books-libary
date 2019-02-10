@@ -55,8 +55,26 @@
             android:layout_height="wrap_content" />
     </com.google.android.material.textfield.TextInputLayout>
 
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/text_input_cover"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/padding_normal"
+        android:hint="@string/add_book_cover_hint"
+        app:errorEnabled="true"
+        app:helperText="@string/add_book_cover_helper"
+        app:helperTextEnabled="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_input_author">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </com.google.android.material.textfield.TextInputLayout>
+
     <Button
-        android:id="@+id/material_outlined_button"
         style="@style/Widget.MaterialComponents.Button.OutlinedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -64,6 +82,6 @@
         android:layout_marginEnd="@dimen/padding_normal"
         android:text="@string/add_book_save_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_input_author" />
+        app:layout_constraintTop_toBottomOf="@id/text_input_cover" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
