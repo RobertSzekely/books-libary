@@ -9,6 +9,7 @@ import com.example.booklibrary.R
 import com.example.booklibrary.databinding.HomeActivityBinding
 import com.example.booklibrary.feature.favorites.FavoritesFragment
 import com.example.booklibrary.feature.feed.BookFeedFragment
+import com.example.booklibrary.feature.feed.addbook.AddBookActivity
 import com.example.booklibrary.feature.wishlist.WishlistFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 
@@ -25,6 +26,9 @@ class HomeActivity : AppCompatActivity() {
             bottomDrawerBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             bottomAppBar.setNavigationOnClickListener { bottomDrawerBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED }
             bottomAppBar.replaceMenu(R.menu.main_navigation)
+            fab.setOnClickListener {
+                startActivity(AddBookActivity.getStartIntent(this@HomeActivity))
+            }
             navigationView.setNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.home -> {
