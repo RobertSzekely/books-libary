@@ -15,6 +15,9 @@
     <string name="add_book_cover_hint">Cover link</string>
     <string name="add_book_cover_helper">Link to the cover of the book</string>
     <string name="add_book_save_button">Save</string>
+    <string name="add_book_error_title">Title field cannot be empty!</string>
+    <string name="add_book_error_author">Author field cannot be empty!</string>
+    <string name="add_book_error_cover">Cover link field cannot be empty!</string>
 
     <!--Home-->
     <string name="home_toolbar_title">Books</string>
