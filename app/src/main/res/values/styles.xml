@@ -6,12 +6,8 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <!--<item name="android:fontFamily">@font/roboto_regular</item>-->
+        <item name="android:fontFamily">@font/google_sans</item>
         <item name="android:textColorSecondary">@color/white</item>
-    </style>
-
-    <style name="TextBold">
-        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="FloatingActionButton" parent="Widget.MaterialComponents.FloatingActionButton">
@@ -19,6 +15,19 @@
         <item name="backgroundTint">@color/colorPrimary</item>
         <item name="tint">@color/white</item>
         <item name="rippleColor">@color/white</item>
+    </style>
+
+    <style name="AppTheme.PopupTheme" parent="ThemeOverlay.MaterialComponents.Light" />
+
+    <style name="Widget.AppBar" parent="@style/Widget.Design.AppBarLayout">
+        <item name="popupTheme">@style/AppTheme.PopupTheme</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="ToolbarTitle" parent="@style/TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:fontFamily">@font/google_sans</item>
     </style>
 
 </resources>
