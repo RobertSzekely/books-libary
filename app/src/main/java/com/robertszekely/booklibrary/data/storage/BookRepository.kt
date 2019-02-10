@@ -29,8 +29,14 @@ class BookRepository(private val networkManager: NetworkManager) {
         })
     }
 
-    fun addBook(callback: ApiCallback<Void>) {
+    fun addBook(book: Book, callback: ApiCallback<Void>) {
+        networkManager.service.addBook(book).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+            }
 
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+            }
+        })
     }
 
     interface ApiCallback<T> {
