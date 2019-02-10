@@ -10,7 +10,7 @@ import retrofit2.Response
 
 class BookRepository(private val networkManager: NetworkManager) {
 
-    fun getBooks(callback: ApiCallback) {
+    fun getBooks(callback: ApiCallback<List<Book>>) {
         networkManager.service.getBooks().enqueue(object : Callback<BooksResponse> {
             override fun onResponse(call: Call<BooksResponse>, response: Response<BooksResponse>) {
                 if (response.isSuccessful) {
@@ -29,10 +29,15 @@ class BookRepository(private val networkManager: NetworkManager) {
         })
     }
 
-    interface ApiCallback {
-        fun onSuccess(books: List<Book>)
+    fun addBook(callback: ApiCallback<Void>) {
+
+    }
+
+    interface ApiCallback<T> {
+        fun onSuccess(result: T)
 
         fun onFailure(errorMessage: String)
     }
+
 
 }
