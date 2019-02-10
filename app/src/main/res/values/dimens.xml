@@ -10,5 +10,6 @@
 
     <!--Book feed-->
     <dimen name="cover_width">96dp</dimen>
+    <dimen name="progress_bar_size">48dp</dimen>
 
 </resources>

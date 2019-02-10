@@ -9,17 +9,24 @@ import com.robertszekely.booklibrary.data.storage.BookRepository
 class BookFeedViewModel(private val repository: BookRepository) : ViewModel() {
 
     val booksList = MutableLiveData<List<Book>>()
+    val isLoading = MutableLiveData<Boolean>()
 
-    fun loadBooks() {
+    init {
+        loadBooks()
+    }
+
+    private fun loadBooks() {
+        isLoading.postValue(true)
         repository.getBooks(object : BookRepository.ApiCallback {
             override fun onSuccess(books: List<Book>) {
                 booksList.postValue(books)
+                isLoading.postValue(false)
             }
 
             override fun onFailure(errorMessage: String) {
                 Log.d("BookFeedViewModel", "Loading books failed!")
+                isLoading.postValue(false)
             }
-
         })
     }
 }

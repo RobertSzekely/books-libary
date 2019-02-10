@@ -36,11 +36,13 @@ class BookFeedFragment : Fragment() {
                 adapter.submitList(result)
             }
         })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        viewModel.loadBooks()
+        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+            if (it) {
+                binding.progressCircular.show()
+            } else {
+                binding.progressCircular.hide()
+            }
+        })
     }
 
     companion object {
