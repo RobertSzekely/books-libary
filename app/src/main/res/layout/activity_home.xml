@@ -39,9 +39,9 @@
 
             <com.google.android.material.navigation.NavigationView
                 android:id="@+id/navigation_view"
-                app:itemIconSize="24dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:itemIconSize="24dp"
                 app:menu="@menu/main_navigation" />
         </FrameLayout>
 

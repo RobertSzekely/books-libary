@@ -1,4 +1,4 @@
-package com.example.booklibrary.feature
+package com.example.booklibrary.feature.home
 
 import android.os.Bundle
 import android.view.View
@@ -33,7 +33,7 @@ class HomeActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.home -> {
                         fab.show()
-                        navigateToFragment(BookFeedFragment.newInstance())
+                        navigateToFragment(HomeFragment.newInstance())
                         return@setNavigationItemSelectedListener true
                     }
                     R.id.favorites -> {
@@ -51,7 +51,7 @@ class HomeActivity : AppCompatActivity() {
             }
         }
         if (savedInstanceState == null) {
-            navigateToFragment(BookFeedFragment.newInstance())
+            navigateToFragment(HomeFragment.newInstance())
         }
     }
 

@@ -15,9 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".feature.feed.addbook.AddBookActivity"></activity>
+        <activity android:name=".feature.feed.addbook.AddBookActivity"/>
         <activity
-            android:name=".feature.HomeActivity"
+            android:name=".feature.home.HomeActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
             <intent-filter>

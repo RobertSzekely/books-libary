@@ -1,4 +1,4 @@
-package com.example.booklibrary.feature
+package com.example.booklibrary.util
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
