@@ -16,4 +16,7 @@
     <string name="add_book_cover_helper">Link to the cover of the book</string>
     <string name="add_book_save_button">Save</string>
 
+    <!--Home-->
+    <string name="home_toolbar_title">Books</string>
+
 </resources>

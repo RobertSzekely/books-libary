@@ -1,7 +1,8 @@
 <resources>
 
     <!--General-->
-    <dimen name="padding_normal">16dp</dimen>
+    <dimen name="margin_normal">16dp</dimen>
+    <dimen name="spacing_micro">4dp</dimen>
 
     <!--Text dimens-->
     <dimen name="text_medium_small">14sp</dimen>

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="?android:attr/selectableItemBackground"
-            android:padding="@dimen/padding_normal">
+            android:padding="@dimen/margin_normal">
 
         <ImageView
                 android:id="@+id/book_cover_image"
