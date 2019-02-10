@@ -3,8 +3,11 @@ package com.robertszekely.booklibrary.feature.feed.addbook
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.Observer
 import com.robertszekely.booklibrary.AddBookBinding
 import com.robertszekely.booklibrary.R
 import com.robertszekely.booklibrary.data.models.Book
@@ -23,6 +26,16 @@ class AddBookActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView<AddBookBinding>(this, R.layout.activity_add_book).apply {
             saveButton.setOnClickListener { validateAndAddBook() }
         }
+        viewModel.shouldCloseActivity.observe(this, Observer {
+            if (it) {
+                Toast.makeText(this, R.string.add_book_success, Toast.LENGTH_SHORT).show()
+                Handler().apply {
+                    postDelayed({
+                        finish()
+                    }, 1000)
+                }
+            }
+        })
     }
 
     private fun validateAndAddBook() {

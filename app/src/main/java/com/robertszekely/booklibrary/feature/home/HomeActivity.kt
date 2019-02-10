@@ -24,7 +24,6 @@ class HomeActivity : AppCompatActivity() {
             bottomDrawerBehavior = BottomSheetBehavior.from(bottomDrawer)
             bottomDrawerBehavior.state = BottomSheetBehavior.STATE_HIDDEN
             bottomAppBar.setNavigationOnClickListener { bottomDrawerBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED }
-            bottomAppBar.replaceMenu(R.menu.main_navigation)
             fab.setOnClickListener {
                 startActivity(AddBookActivity.getStartIntent(this@HomeActivity))
             }

@@ -23,7 +23,7 @@ class BookRepository(private val networkManager: NetworkManager) {
             }
 
             override fun onFailure(call: Call<BooksResponse>, t: Throwable) {
-                callback.onFailure("Friend request reject failed with ${t.message}")
+                callback.onFailure("Book GET failed with ${t.message}")
             }
 
         })
@@ -32,15 +32,19 @@ class BookRepository(private val networkManager: NetworkManager) {
     fun addBook(book: Book, callback: ApiCallback<Void>) {
         networkManager.service.addBook(book).enqueue(object : Callback<Void> {
             override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    callback.onSuccess(null)
+                }
             }
 
             override fun onFailure(call: Call<Void>, t: Throwable) {
+                callback.onFailure("Book POST failed with ${t.message}")
             }
         })
     }
 
     interface ApiCallback<T> {
-        fun onSuccess(result: T)
+        fun onSuccess(result: T?)
 
         fun onFailure(errorMessage: String)
     }
