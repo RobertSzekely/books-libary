@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name="com.robertszekely.booklibrary.BookLibraryApplication"
+        android:name=".BookLibraryApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -15,9 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name="com.robertszekely.booklibrary.feature.feed.addbook.AddBookActivity"/>
+        <activity android:name=".feature.feed.addbook.AddBookActivity" />
         <activity
-            android:name="com.robertszekely.booklibrary.feature.home.HomeActivity"
+            android:name=".feature.home.HomeActivity"
             android:launchMode="singleTask"
             android:theme="@style/AppTheme">
             <intent-filter>
