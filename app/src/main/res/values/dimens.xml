@@ -7,9 +7,14 @@
     <!--Text dimens-->
     <dimen name="text_medium_small">14sp</dimen>
     <dimen name="text_medium">16sp</dimen>
+    <dimen name="text_medium_large">18sp</dimen>
+    <dimen name="text_medium_extra_large">20sp</dimen>
 
     <!--Book feed-->
     <dimen name="cover_width">96dp</dimen>
     <dimen name="progress_bar_size">48dp</dimen>
+
+    <!--Book details-->
+    <dimen name="detail_cover_width">132dp</dimen>
 
 </resources>
