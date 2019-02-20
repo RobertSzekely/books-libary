@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.robertszekely.booklibrary.BookFeedFragmentBinding
 import com.robertszekely.booklibrary.R
-import com.robertszekely.booklibrary.feature.detail.DetailFragment
+import com.robertszekely.booklibrary.feature.detail.BookDetailFragment
 import com.robertszekely.booklibrary.util.EventObserver
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -49,7 +49,7 @@ class BookFeedFragment : Fragment() {
 
         viewModel.navigateToBookAction.observe(viewLifecycleOwner, EventObserver {
             fragmentManager?.transaction {
-                replace(R.id.main_content, DetailFragment.newInstance(it))
+                replace(R.id.main_content, BookDetailFragment.newInstance(it))
                 addToBackStack(null)
             }
         })

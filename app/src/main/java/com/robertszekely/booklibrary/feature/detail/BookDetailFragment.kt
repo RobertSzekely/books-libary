@@ -5,17 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.robertszekely.booklibrary.DetailFragmentBinding
+import com.robertszekely.booklibrary.BookDetailFragmentBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
-class DetailFragment : Fragment() {
+class BookDetailFragment : Fragment() {
 
-    private val viewModel by viewModel<DetailViewModel> { parametersOf(arguments?.argBookId) }
-    private lateinit var binding: DetailFragmentBinding
+    private val viewModel by viewModel<BookDetailViewModel> { parametersOf(arguments?.argBookId) }
+    private lateinit var binding: BookDetailFragmentBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        binding = DetailFragmentBinding.inflate(inflater, container, false)
+        binding = BookDetailFragmentBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -27,7 +27,7 @@ class DetailFragment : Fragment() {
     companion object {
         private const val ARG_BOOK_ID = "arg.BOOK_ID"
 
-        fun newInstance(bookId: String) = DetailFragment().apply {
+        fun newInstance(bookId: String) = BookDetailFragment().apply {
             arguments?.putString(ARG_BOOK_ID, bookId)
         }
 

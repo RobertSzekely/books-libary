@@ -3,7 +3,7 @@ package com.robertszekely.booklibrary
 import com.google.gson.GsonBuilder
 import com.robertszekely.booklibrary.data.network.NetworkManager
 import com.robertszekely.booklibrary.data.storage.BookRepository
-import com.robertszekely.booklibrary.feature.detail.DetailViewModel
+import com.robertszekely.booklibrary.feature.detail.BookDetailViewModel
 import com.robertszekely.booklibrary.feature.feed.BookFeedViewModel
 import com.robertszekely.booklibrary.feature.feed.addbook.AddBookViewModel
 import org.koin.androidx.viewmodel.experimental.builder.viewModel
@@ -22,5 +22,5 @@ val repositoryModule = module {
 val viewModelsModule = module {
     viewModel<BookFeedViewModel>()
     viewModel<AddBookViewModel>()
-    viewModel { (bookId: String) -> DetailViewModel(bookId, get()) }
+    viewModel { (bookId: String) -> BookDetailViewModel(bookId, get()) }
 }
