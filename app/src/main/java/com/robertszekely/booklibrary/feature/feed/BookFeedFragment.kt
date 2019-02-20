@@ -49,7 +49,7 @@ class BookFeedFragment : Fragment() {
 
         viewModel.navigateToBookAction.observe(viewLifecycleOwner, EventObserver {
             fragmentManager?.transaction {
-                replace(R.id.main_content, DetailFragment.newInstance())
+                replace(R.id.main_content, DetailFragment.newInstance(it))
                 addToBackStack(null)
             }
         })
