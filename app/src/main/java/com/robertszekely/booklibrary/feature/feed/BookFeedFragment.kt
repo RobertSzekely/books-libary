@@ -6,10 +6,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.transaction
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.robertszekely.booklibrary.BookFeedFragmentBinding
 import com.robertszekely.booklibrary.R
+import com.robertszekely.booklibrary.feature.detail.DetailFragment
+import com.robertszekely.booklibrary.util.EventObserver
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class BookFeedFragment : Fragment() {
@@ -24,7 +27,7 @@ class BookFeedFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val adapter = BookAdapter()
+        val adapter = BookAdapter(viewModel)
         with(binding) {
             viewModel = this@BookFeedFragment.viewModel
             recycler.adapter = adapter
@@ -41,6 +44,13 @@ class BookFeedFragment : Fragment() {
                 binding.progressCircular.show()
             } else {
                 binding.progressCircular.hide()
+            }
+        })
+
+        viewModel.navigateToBookAction.observe(viewLifecycleOwner, EventObserver {
+            fragmentManager?.transaction {
+                replace(R.id.main_content, DetailFragment.newInstance())
+                addToBackStack(null)
             }
         })
     }

@@ -30,6 +30,7 @@ dependencies {
     // Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.1.0-alpha04'
+    implementation 'androidx.fragment:fragment-ktx:1.0.0'
 
     // Networking
     def retrofitVersion = "2.3.0"
