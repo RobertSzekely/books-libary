@@ -48,5 +48,54 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <ImageView
+            android:id="@+id/empty_state_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_library_books"
+            android:tint="@color/colorPrimary"
+            app:layout_constraintBottom_toTopOf="@id/empty_state_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <TextView
+            android:id="@+id/empty_state_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginTop="@dimen/margin_normal"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:gravity="center"
+            android:text="@string/empty_state"
+            android:textSize="@dimen/text_medium_extra_large"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/empty_state_suggestion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/empty_state_image" />
+
+        <TextView
+            android:id="@+id/empty_state_suggestion"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
+            android:layout_marginEnd="@dimen/margin_large"
+            android:gravity="center"
+            android:text="@string/empty_state_suggestion"
+            android:textSize="@dimen/text_medium_small"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/empty_state_text" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/empty_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="empty_state_image,empty_state_text, empty_state_suggestion" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

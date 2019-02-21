@@ -2,6 +2,7 @@
 
     <!--General-->
     <dimen name="margin_normal">16dp</dimen>
+    <dimen name="margin_large">36dp</dimen>
     <dimen name="spacing_micro">4dp</dimen>
 
     <!--Text dimens-->

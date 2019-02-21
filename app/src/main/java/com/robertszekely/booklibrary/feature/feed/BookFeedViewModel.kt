@@ -23,6 +23,10 @@ class BookFeedViewModel(private val repository: BookRepository) : ViewModel(), B
     val isLoading: LiveData<Boolean>
         get() = _isLoading
 
+    private val _isEmpty = MutableLiveData<Event<Boolean>>()
+    val isEmpty: LiveData<Event<Boolean>>
+        get() = _isEmpty
+
     init {
         loadBooks()
     }
@@ -33,11 +37,17 @@ class BookFeedViewModel(private val repository: BookRepository) : ViewModel(), B
             override fun onSuccess(result: List<Book>?) {
                 _booksList.postValue(result)
                 _isLoading.postValue(false)
+                if (result.isNullOrEmpty()) {
+                    _isEmpty.postValue(Event(true))
+                } else {
+                    _isEmpty.postValue(Event(false))
+                }
             }
 
             override fun onFailure(errorMessage: String) {
                 Log.d("BookFeedViewModel", "Loading books failed!")
                 _isLoading.postValue(false)
+                _isEmpty.postValue(Event(true))
             }
         })
     }

@@ -22,6 +22,7 @@ class BookFeedFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_book_feed, container, false)
+        binding.setLifecycleOwner(this)
         return binding.root
     }
 
@@ -37,12 +38,12 @@ class BookFeedFragment : Fragment() {
                 this@BookFeedFragment.viewModel.loadBooks()
             }
         }
-        viewModel.booksList.observe(viewLifecycleOwner, Observer {result ->
+        viewModel.booksList.observe(this, Observer {result ->
             if (!result.isNullOrEmpty()) {
                 adapter.submitList(result)
             }
         })
-        viewModel.isLoading.observe(viewLifecycleOwner, Observer {
+        viewModel.isLoading.observe(this, Observer {
             if (it) {
                 binding.progressCircular.show()
             } else {
@@ -51,7 +52,15 @@ class BookFeedFragment : Fragment() {
             }
         })
 
-        viewModel.navigateToBookAction.observe(viewLifecycleOwner, EventObserver {
+        viewModel.isEmpty.observe(this, EventObserver {
+            if (it) {
+                binding.emptyState.visibility = View.VISIBLE
+            } else {
+                binding.emptyState.visibility = View.GONE
+            }
+        })
+
+        viewModel.navigateToBookAction.observe(this, EventObserver {
             fragmentManager?.transaction {
                 replace(R.id.main_content, BookDetailFragment.newInstance(it))
                 addToBackStack(null)
