@@ -1,4 +1,4 @@
-package com.robertszekely.booklibrary.data.network
+package com.robertszekely.booklibrary.network
 
 import com.google.gson.Gson
 import okhttp3.OkHttpClient
@@ -17,6 +17,6 @@ class NetworkManager(gson: Gson) {
     companion object {
         const val BASE_URL = "http://192.168.100.4:3000"
         const val TOKEN =
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI1YzU3MjliMmY2ZGE0MzA4Y2VkNDg5MTEiLCJpYXQiOjE1NDk3Mzk4MjUsImV4cCI6MTU0OTgyNjIyNX0.IrkRoPOyTqOXWU59z5pcjY_KColvjfsFIqXVE-fk80M"
+            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJ1c2VySWQiOiI1YzU3MjliMmY2ZGE0MzA4Y2VkNDg5MTEiLCJpYXQiOjE1NTA3MDMwMzMsImV4cCI6MTU1MDc4OTQzM30.cSwsPoPJ3KmBcbnu5P5cH_bjTeHo-WdLkbx3oe9dijg"
     }
 }
