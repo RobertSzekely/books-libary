@@ -5,8 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 import com.robertszekely.booklibrary.BookDetailFragmentBinding
 import com.robertszekely.booklibrary.data.models.Book
+import com.robertszekely.booklibrary.util.EventObserver
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -27,6 +29,10 @@ class BookDetailFragment : Fragment() {
         binding.updateButton.setOnClickListener {
             updateBook()
         }
+
+        viewModel.snackBarEvent.observe(this, EventObserver { message ->
+            Snackbar.make(binding.root, message, Snackbar.LENGTH_SHORT).show()
+        })
     }
 
     private fun updateBook() {
