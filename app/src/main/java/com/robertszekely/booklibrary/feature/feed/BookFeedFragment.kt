@@ -33,6 +33,9 @@ class BookFeedFragment : Fragment() {
             recycler.adapter = adapter
             recycler.layoutManager = LinearLayoutManager(context)
             setLifecycleOwner(viewLifecycleOwner)
+            swipeRefreshLayout.setOnRefreshListener {
+                this@BookFeedFragment.viewModel.loadBooks()
+            }
         }
         viewModel.booksList.observe(viewLifecycleOwner, Observer {result ->
             if (!result.isNullOrEmpty()) {
@@ -44,6 +47,7 @@ class BookFeedFragment : Fragment() {
                 binding.progressCircular.show()
             } else {
                 binding.progressCircular.hide()
+                binding.swipeRefreshLayout.isRefreshing = false
             }
         })
 

@@ -27,7 +27,7 @@ class BookFeedViewModel(private val repository: BookRepository) : ViewModel(), B
         loadBooks()
     }
 
-    private fun loadBooks() {
+    fun loadBooks() {
         _isLoading.postValue(true)
         repository.getBooks(object : BookRepository.ApiCallback<List<Book>> {
             override fun onSuccess(result: List<Book>?) {
