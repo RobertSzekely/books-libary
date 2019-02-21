@@ -61,6 +61,20 @@ class BookRepository(private val networkManager: NetworkManager) {
         })
     }
 
+    fun deleteBook(bookId: String, callback: ApiCallback<Void>) {
+        networkManager.service.deleteBook(bookId).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    callback.onSuccess(null)
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                callback.onFailure("Book DELETE failed with ${t.message}")
+            }
+        })
+    }
+
     interface ApiCallback<T> {
         fun onSuccess(result: T?)
 
