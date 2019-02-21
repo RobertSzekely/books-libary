@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.robertszekely.booklibrary.BookDetailFragmentBinding
+import com.robertszekely.booklibrary.data.models.Book
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -23,11 +24,22 @@ class BookDetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         binding.viewModel = viewModel
+        binding.updateButton.setOnClickListener {
+            updateBook()
+        }
+    }
+
+    private fun updateBook() {
+        if (binding.bookTitle.text.toString().isNotEmpty()) {
+            if (binding.bookAuthor.text.toString().isNotEmpty()) {
+                viewModel.updateBook(Book(null, binding.bookTitle.text.toString(), binding.bookAuthor.text.toString(), viewModel.cover.value))
+            }
+        }
+
     }
 
     companion object {
         private const val ARG_BOOK_ID = "arg.BOOK_ID"
-
 
         fun newInstance(bookId: String) = BookDetailFragment().apply {
             arguments = Bundle().apply {

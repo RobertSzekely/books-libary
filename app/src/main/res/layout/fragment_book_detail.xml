@@ -31,7 +31,7 @@
             tools:ignore="ContentDescription"
             tools:src="@drawable/no_photo" />
 
-        <TextView
+        <EditText
             android:id="@+id/book_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +45,7 @@
             app:layout_constraintTop_toBottomOf="@id/book_cover_image"
             tools:text="Harry Potter" />
 
-        <TextView
+        <EditText
             android:id="@+id/book_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

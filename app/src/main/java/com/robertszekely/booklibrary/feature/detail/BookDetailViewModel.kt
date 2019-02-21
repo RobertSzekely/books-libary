@@ -51,4 +51,14 @@ class BookDetailViewModel(private val bookId: String, private val repository: Bo
             }
         })
     }
+
+    fun updateBook(book: Book) {
+        repository.updateBook(bookId, book, object : BookRepository.ApiCallback<Void> {
+            override fun onSuccess(result: Void?) {
+            }
+
+            override fun onFailure(errorMessage: String) {
+            }
+        })
+    }
 }

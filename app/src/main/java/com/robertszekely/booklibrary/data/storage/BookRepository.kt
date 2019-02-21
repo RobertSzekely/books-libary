@@ -75,6 +75,20 @@ class BookRepository(private val networkManager: NetworkManager) {
         })
     }
 
+    fun updateBook(bookId: String, book: Book, callback: ApiCallback<Void>) {
+        networkManager.service.updateBook(bookId, book).enqueue(object : Callback<Void> {
+            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+                if (response.isSuccessful) {
+                    callback.onSuccess(null)
+                }
+            }
+
+            override fun onFailure(call: Call<Void>, t: Throwable) {
+                callback.onFailure("Book UPDATE failed with ${t.message}")
+            }
+        })
+    }
+
     interface ApiCallback<T> {
         fun onSuccess(result: T?)
 
