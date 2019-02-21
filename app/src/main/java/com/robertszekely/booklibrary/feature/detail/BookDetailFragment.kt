@@ -16,19 +16,23 @@ class BookDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         binding = BookDetailFragmentBinding.inflate(inflater, container, false)
+        binding.setLifecycleOwner(this)
         return binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-
+        binding.viewModel = viewModel
     }
 
     companion object {
         private const val ARG_BOOK_ID = "arg.BOOK_ID"
 
+
         fun newInstance(bookId: String) = BookDetailFragment().apply {
-            arguments?.putString(ARG_BOOK_ID, bookId)
+            arguments = Bundle().apply {
+                putString(ARG_BOOK_ID, bookId)
+            }
         }
 
         private val Bundle.argBookId
