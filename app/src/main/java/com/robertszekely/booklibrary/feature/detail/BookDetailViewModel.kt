@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 import com.robertszekely.booklibrary.data.models.Book
 import com.robertszekely.booklibrary.data.storage.BookRepository
 
-class BookDetailViewModel(bookId: String, private val repository: BookRepository) : ViewModel() {
+class BookDetailViewModel(private val bookId: String, private val repository: BookRepository) : ViewModel() {
 
     private val _title = MutableLiveData<String>()
     val title: LiveData<String>
@@ -38,6 +38,16 @@ class BookDetailViewModel(bookId: String, private val repository: BookRepository
 
             override fun onFailure(errorMessage: String) {
                 Log.d(BookDetailViewModel::class.java.name, "Failed getting book details!")
+            }
+        })
+    }
+
+    fun deleteBook() {
+        repository.deleteBook(bookId, object : BookRepository.ApiCallback<Void> {
+            override fun onSuccess(result: Void?) {
+            }
+
+            override fun onFailure(errorMessage: String) {
             }
         })
     }

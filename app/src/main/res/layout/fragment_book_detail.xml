@@ -69,6 +69,7 @@
             app:layout_constraintVertical_chainStyle="packed" />
 
         <Button
+            android:onClick="@{() -> viewModel.deleteBook()}"
             android:id="@+id/remove_button"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="wrap_content"
