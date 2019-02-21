@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import com.robertszekely.booklibrary.R
 import com.robertszekely.booklibrary.databinding.HomeActivityBinding
 import com.robertszekely.booklibrary.feature.favorites.FavoritesFragment
-import com.robertszekely.booklibrary.feature.feed.addbook.AddBookActivity
+import com.robertszekely.booklibrary.feature.add.AddBookActivity
 import com.robertszekely.booklibrary.feature.wishlist.WishlistFragment
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 

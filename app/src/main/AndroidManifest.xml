@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".feature.feed.addbook.AddBookActivity" />
+        <activity android:name="com.robertszekely.booklibrary.feature.add.AddBookActivity" />
         <activity
             android:name=".feature.home.HomeActivity"
             android:launchMode="singleTask"
