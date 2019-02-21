@@ -28,5 +28,6 @@
     <string name="detail_update_button">Update</string>
     <string name="empty_state">Seems like there are no books in here :(</string>
     <string name="empty_state_suggestion"> Why don\'t you add a book by tapping the plus button?</string>
+    <string name="work_in_progress">Work in progress…</string>
 
 </resources>
